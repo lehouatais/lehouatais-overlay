@@ -43,6 +43,8 @@ src_install() {
 	doexe "${FILESDIR}/elasticsearch-systemd-pre-exec"
 
 	chmod +x "${ED}"/usr/share/${PN}/bin/* || die
+	chmod +x "${ED}"/usr/share/elasticsearch/modules/x-pack/x-pack-ml/platform/linux-x86_64/bin/controller || die
+
 
 	keepdir /var/{lib,log}/${PN}
 	fowners ${PN}:${PN} /var/{lib,log}/${PN}
